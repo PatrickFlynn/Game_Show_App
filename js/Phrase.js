@@ -9,6 +9,7 @@ class Phrase{
 
     //This method adds the chosen phrase to the game board
     addPhraseToDisplay(){
+
         let phrase_div_ul = document.querySelector('#phrase').firstElementChild;
 
         //function to create LI element on game board
@@ -39,7 +40,20 @@ class Phrase{
 
     }
 
-    showMatchedLetter(){
+    //Unhide the matching letter on the game board  for each occurence in the phrase 
+    showMatchedLetter(letter){
+
+        let phrase_div_ul = document.querySelector('#phrase').firstElementChild;
+
+        function remove_hidden_class(li){
+
+            li.classList.replace('hide', 'show');
+
+        }
+
+        [...phrase_div_ul.children]
+            .filter(li => li.innerText === letter)
+            .map(li => remove_hidden_class(li));
 
     }
 }
