@@ -6,20 +6,20 @@ class Game{
     constructor(){
         this.missed = 0;
         this.phrases = [
-            "Black Panther",
-            "Iron Man",
-            "Spiderman",
-            "Captain America",
-            "The Hulk",
-            "Groot",
-            "Thanos",
-            "Dr Strange",
-            "Black Widow",
-            "Winter Soldier",
-            "Vision",
-            "Hawkeye",
-            "Thor",
-            "Scarlet Witch",
+            new Phrase("Black Panther"),
+            new Phrase("Iron Man"),
+            new Phrase("Spiderman"),
+            new Phrase("Captain America"),
+            new Phrase("The Hulk"),
+            new Phrase("Groot"),
+            new Phrase("Thanos"),
+            new Phrase("Dr Strange"),
+            new Phrase("Black Widow"),
+            new Phrase("Winter Soldier"),
+            new Phrase("Vision"),
+            new Phrase("Hawkeye"),
+            new Phrase("Thor"),
+            new Phrase("Scarlet Witch"),
 
         ];
         this.activePhrase = null;
@@ -31,7 +31,7 @@ class Game{
 
         document.querySelector('#overlay').style.display = 'none';
 
-        this.activePhrase = new Phrase(this.getRandomPhrase());
+        this.activePhrase = this.getRandomPhrase();
 
         this.activePhrase.addPhraseToDisplay();
 
